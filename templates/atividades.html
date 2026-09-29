@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block main %}
+    <h1>Atividades</h1>
+    {% if atividades %}
+        <ul>
+            {% for atividade in atividades %}
+                <li>
+                    <h2>{{ atividade['titulo'] }}</h2>
+                    <p>{{ atividade['descricao'] }}</p>
+                    <time datetime="{{ atividade['data'] }}">Prazo: {{ atividade['data'] }}</time>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>Nenhuma atividade cadastrada.</p>
+    {% endif %}
+{% endblock %}

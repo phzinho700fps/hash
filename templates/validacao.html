@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block main %}
+    <h1>Validação de eleitor e motorista</h1>
+
+    <form method="POST">
+        <label for="nome">Nome</label><br>
+        <input type="text" id="nome" name="nome" value="{{ nome }}"><br><br>
+
+        <label for="sobrenome">Sobrenome</label><br>
+        <input type="text" id="sobrenome" name="sobrenome" value="{{ sobrenome }}"><br><br>
+
+        <label for="idade">Idade</label><br>
+        <input type="number" id="idade" name="idade" value="{{ idade if idade is not none else '' }}"><br><br>
+
+        <button type="submit">Validar</button>
+    </form>
+
+    {% if nome or sobrenome or idade %}
+        <h2>Resultado</h2>
+        <p>Nome completo: {{ nome }} {{ sobrenome }}</p>
+        <p>Idade: {{ idade }}</p>
+
+        {% if pode_votar is not none %}
+            <p>Pode votar: {{ 'Sim' if pode_votar else 'Não' }}</p>
+            <p>Pode dirigir: {{ 'Sim' if pode_dirigir else 'Não' }}</p>
+        {% endif %}
+    {% endif %}
+{% endblock %}

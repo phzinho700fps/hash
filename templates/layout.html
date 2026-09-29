@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="/static/menu.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/sobre">Sobre Mim</a></li>
+                <li><a href="/validacao">Validação</a></li>
+                <li><a href="{{ url_for('boletim') }}">Boletim</a></li>
+                <li><a href="{{ url_for('atividades') }}">Atividades</a></li>
+                {% if session.get('user_id') %}
+                    <li>Olá, {{ session.get('username') }}</li>
+                    <li>
+                        <form action="{{ url_for('logout') }}" method="post">
+                            <button type="submit">Sair</button>
+                        </form>
+                    </li>
+                {% else %}
+                    <li><a href="{{ url_for('login') }}">Entrar</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+    </header>
+    <main>
+        {% for mensagem in get_flashed_messages() %}
+            <p role="alert">{{ mensagem }}</p>
+        {% endfor %}
+        {% block main %}
+        {% endblock %}
+    </main>
+</body>
+</html>

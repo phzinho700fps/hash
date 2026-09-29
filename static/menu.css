@@ -1,0 +1,89 @@
+header {
+    background-color: #222;
+    padding: 15px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+
+.sobre{
+    font-size: 30px;
+}
+
+.Jogos{
+    text-align: center;
+    padding: 200px;
+    font-size: 40px;
+    border: solid 10px black;
+}
+
+.rl{
+    max-width: 500px;
+}
+.Series{
+    text-align: center;
+    padding: 200px;
+    font-size: 40px;
+    border: solid 10px black;
+}
+.smallville{
+    max-width: 500px;
+}
+.mirror{
+    max-width: 500px;
+}
+
+.animes{
+    text-align: center;
+    padding: 200px;
+    font-size: 40px;
+    border: solid 10px black;
+}
+.bleach{
+    max-width: 500px;
+}
+.leveling{
+    max-width: 500px;
+}
+
+.MuayThai{
+    text-align: center;
+    padding: 200px;
+    font-size: 40px;
+    border: solid 10px black;
+}
+
+.muay{
+     max-width: 500px;
+}
+
+
+.icon img{
+    max-width: 300px;
+    border-radius: 50%;
+    padding: 100px;
+}
+.icon{
+    text-align: center;
+}
+
+.musicas{
+    text-align: center;
+    font-size: 30px;
+}

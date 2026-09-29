@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% block main %}
+    <h1>Acesso do aluno</h1>
+    <form method="post">
+        <label for="usuario">Usuário</label><br>
+        <input type="text" id="usuario" name="usuario" autocomplete="username" required><br><br>
+
+        <label for="senha">Senha</label><br>
+        <input type="password" id="senha" name="senha" autocomplete="current-password" required><br><br>
+
+        <button type="submit">Entrar</button>
+    </form>
+{% endblock %}

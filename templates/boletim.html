@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block main %}
+    <h1>Boletim</h1>
+    {% if notas %}
+        <table>
+            <thead>
+                <tr><th>Matéria</th><th>Bimestre</th><th>Nota</th></tr>
+            </thead>
+            <tbody>
+                {% for item in notas %}
+                    <tr>
+                        <td>{{ item['materia'] }}</td>
+                        <td>{{ item['bimestre'] }}</td>
+                        <td>{{ '%.1f'|format(item['nota']) }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>Nenhuma nota cadastrada.</p>
+    {% endif %}
+{% endblock %}
